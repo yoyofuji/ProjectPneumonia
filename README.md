@@ -2,7 +2,7 @@
 
  This project aims to use Artificial Intelligence to identify a presence of pneumonia in an xray. This AI helps classify xray pictures into 2 categories : Normal,Pneumonia. This helps separate the cases of patients who may be infected with this disease.
 
-![Identification of X-ray of Pneumonia infected patient]![6](https://github.com/yoyofuji/ProjectPneumonia/assets/174374607/4480a308-23f0-48e5-8cba-d5a41264a2ab)
+Identification of X-ray of Pneumonia infected patient[6](https://github.com/yoyofuji/ProjectPneumonia/assets/174374607/4480a308-23f0-48e5-8cba-d5a41264a2ab)
 
 
 ## The Algorithm
@@ -32,7 +32,7 @@ The final line to train should be:
 
 'python3 train.py --model-dir=models/(name_of_model) data/(name_of_file_with_data) --epochs=35 --batch-size=1 --workers=1'
 
-When training a model, different idications are given and shouldnt be neglected.
+When training a model, different indications are given and should not be neglected:
  - train loss: The margin of loss and error in the epoch ran
  - Time: time spent running an epoch
  - train accuracy: The overall sucess rate of the epoch run
@@ -45,9 +45,11 @@ When training a model, different idications are given and shouldnt be neglected.
 
 As shown in the graph above accuracy improves over time however it does reach a limit point, often found in the 85-95%. However after a certain number of epochs a problem can occur called overfitting. 
 
-Overfitting is the case where the AI model trains too many times to the point where it loses accuracy as it tends to focus on smaller insignificant and irrelevant details. 
+Overfitting is the case where the AI model trains too many times to the point where it loses accuracy as it tends to focus on smaller insignificant and irrelevant details after processing the same images too many times.This damages significantly the accuracy of your model as seen below.
 
 ![image](https://github.com/yoyofuji/ProjectPneumonia/assets/174374607/9cf3760d-9e56-45ca-a2a9-f2be6b0bf841)
+
+Underfitting also exits and in opposition to overfitting consist of not training a model enough meaning it will be inaccurate and inconsistent.
 
 A simple relation exits between loss and epochs, the more epochs are run, the more the amount of loss diminishes.
 
@@ -72,11 +74,15 @@ A simple relation exits between loss and epochs, the more epochs are run, the mo
 ## Conclusion
 Here are examples of x ray scans tested.
 
-A normal patient:
+A normal patient: 
+
+Accuracy 79.10% , this is good accuracy and the correct answer
 
 ![12](https://github.com/yoyofuji/ProjectPneumonia/assets/174374607/57cf2aa7-2b32-4820-bc38-ed8d958e34a6)
 
-A sick patient:
+A sick patient: 
+
+Accuracy 85% , very good accuracy and the correct answer
 
 ![14](https://github.com/yoyofuji/ProjectPneumonia/assets/174374607/a7d6b37e-37c4-46d7-b23d-30eb73e8c7c9)
 
