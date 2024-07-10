@@ -4,7 +4,7 @@
 
 Identification of X-ray of Pneumonia infected patient
 
-[6](https://github.com/yoyofuji/ProjectPneumonia/assets/174374607/4480a308-23f0-48e5-8cba-d5a41264a2ab)
+![image](https://github.com/yoyofuji/ProjectPneumonia/assets/174374607/4480a308-23f0-48e5-8cba-d5a41264a2ab)
 
 
 ## The Algorithm
