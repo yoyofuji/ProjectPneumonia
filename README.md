@@ -9,7 +9,7 @@ Identification of X-ray of Pneumonia infected patient
 
 ## The Algorithm
 
-For this project , to create and train a model , we used **resnet18** which is a special type of network using 18 layers and employing CNN, convolutional neural network. CNN has its downsides , notably the time it takes to train, however it is widely considered the best neural network for image detction.
+For this project , to create and train a model , we used **resnet18** which is a special type of network using 18 layers and employing CNN, convolutional neural network. CNN has its downsides , notably the time it takes to train, however it is widely considered the best neural network for image detection.
 
 ![image](https://github.com/yoyofuji/ProjectPneumonia/assets/174374607/1bc243ca-7298-4caf-85f7-9e3a42a068cc)
 
