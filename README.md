@@ -7,7 +7,7 @@
 
 ## The Algorithm
 
-For this project , to create and train a model , we used resnet18 which is a special type of network using 18 layers and employing CNN, convolutional neural network. CNN has its downsides , notably the time it takes to train.
+For this project , to create and train a model , we used resnet18 which is a special type of network using 18 layers and employing CNN, convolutional neural network. CNN has its downsides , notably the time it takes to train, however it is widely considered the best neural network for image detction.
 
 ![image](https://github.com/yoyofuji/ProjectPneumonia/assets/174374607/1bc243ca-7298-4caf-85f7-9e3a42a068cc)
 
@@ -33,9 +33,11 @@ The final line to train should be:
 'python3 train.py --model-dir=models/(name_of_model) data/(name_of_file_with_data) --epochs=35 --batch-size=1 --workers=1'
 
 When training a model, different idications are given and shouldnt be neglected.
- - loss:The margin of loss and error in the epoch ran
- - Time:time spent running an epoch
- - accuracy:The overall sucess rate of the epoch run
+ - train loss: The margin of loss and error in the epoch ran
+ - Time: time spent running an epoch
+ - train accuracy: The overall sucess rate of the epoch run
+ - val accuracy: Accuracy while running the model in the validation set , essentielly another dataset that serves as validation
+ - val loss: The margin of loss and error when going through the validation set
  
 ### Observations
 
@@ -54,5 +56,32 @@ A simple relation exits between loss and epochs, the more epochs are run, the mo
 ## Running this project
 
 1. Choose the dataset, and the images, personally recommend to use 4000 images per label
-2. create the differnet labels: Normal and pneumonia 
+2. Unzip the file and name it project
+3. sort the images into 3 sections: train,test,val , respect the following ratio of data train:80% test:10% val:10%
+4. Each file should have 50/50 split between normal and pneumonia both in 2 separate folders like this: Project--> train-->Normal
+5. Create the diffrent labels: Normal and pneumonia in a txt file in the ProjectPneumonia file
+6. Import the ProjectPneumonia folder into VS code in this directory *jetson-inference/python/training/classification/data*
+7. Open a new terminal in jetson-inference directory and run the docker with the following command './docker/run.sh' this starts running the docker container to allow you to go trhough images and train the model
+8. In the docker naviguate to jetson-inference/python/training/classification
+9. Enter the following code to start training the model 'python3 train.py --model-dir=models/ProjectPneumonia data/ProjectPneumonia --epochs=70' This will run 70 epochs which shoul be enough to train the model
+10. Once done training, enter this command 'python3 onnx_export.py --model-dir=models/cat_dog' to run the onnx srcipt . Check in jetson-inference/python/training/classification/models/ProjectPneumonia a file resnet18.onnx should be present
+11. Exit the docker with ctrl+D or exit command
+12. Enter both these commands to set the dataset and the network 'NET=models/cat_dog' 'DATASET=data/cat_dog'
+13. Finally, run this command to obtain results in the selected choice 'imagenet.py --model=$NET/resnet18.onnx --input_blob=input_0 --output_blob=output_0 --labels=$DATASET/labels.txt $DATASET/test/Pneumonia/(selected image).jpeg testp1.jpg'
+
+## Conclusion
+Here are examples of x ray scans tested.
+
+A normal patient:
+
+![12](https://github.com/yoyofuji/ProjectPneumonia/assets/174374607/57cf2aa7-2b32-4820-bc38-ed8d958e34a6)
+
+A sick patient:
+
+![14](https://github.com/yoyofuji/ProjectPneumonia/assets/174374607/a7d6b37e-37c4-46d7-b23d-30eb73e8c7c9)
+
+
+
+
+
 [View a video explanation here](video link)
