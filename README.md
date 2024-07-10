@@ -7,7 +7,7 @@
 
 ## The Algorithm
 
-For this project , to create and train a model , we used resnet18 which is a special type of network using 18 layers and employing CNN. 
+For this project , to create and train a model , we used resnet18 which is a special type of network using 18 layers and employing CNN, convolutional neural network. CNN has its downsides , notably the time it takes to train.
 
 ![image](https://github.com/yoyofuji/ProjectPneumonia/assets/174374607/1bc243ca-7298-4caf-85f7-9e3a42a068cc)
 
@@ -33,9 +33,9 @@ The final line to train should be:
 'python3 train.py --model-dir=models/(name_of_model) data/(name_of_file_with_data) --epochs=35 --batch-size=1 --workers=1'
 
 When training a model, different idications are given and shouldnt be neglected.
- - Val loss:The margin of loss and error in the epoch ran
- - Val time:time spent running an epoch
- - Val accuracy:The overall accuracy of the epoch run
+ - loss:The margin of loss and error in the epoch ran
+ - Time:time spent running an epoch
+ - accuracy:The overall sucess rate of the epoch run
  
 ### Observations
 
@@ -53,7 +53,6 @@ A simple relation exits between loss and epochs, the more epochs are run, the mo
 
 ## Running this project
 
-1. Add steps for running this project.
-   
-
+1. Choose the dataset, and the images, personally recommend to use 4000 images per label
+2. create the differnet labels: Normal and pneumonia 
 [View a video explanation here](video link)
