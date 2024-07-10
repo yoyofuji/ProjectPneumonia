@@ -68,13 +68,14 @@ A simple relation exits between loss and epochs, the more epochs are run, the mo
 7. Open a new terminal in jetson-inference directory and run the docker with the following command './docker/run.sh' this starts running the docker container to allow you to go trhough images and train the model
 8. In the docker naviguate to *jetson-inference/python/training/classification*
 9. Enter the following code to start training the model `python3 train.py --model-dir=models/ProjectPneumonia data/ProjectPneumonia --epochs=70` This will run 70 epochs which shoul be enough to train the model
-10. Once done training, enter this command `python3 onnx_export.py --model-dir=models/cat_dog` to run the onnx srcipt . Check in jetson-inference/python/training/classification/models/ProjectPneumonia a file resnet18.onnx should be present
+10. Once done training, enter this command `python3 onnx_export.py --model-dir=models/cat_dog` to run the onnx srcipt . Check in jetson-inference/python/training/classification/models/ProjectPneumonia a file should be present
+ > resnet18.onnx 
 11. Exit the docker with ctrl+D or *exit* command
 12. Enter both these commands to set the dataset and the network `NET=models/cat_dog` & `DATASET=data/cat_dog`
 13. Finally, run this command to obtain results in the selected choice
     `imagenet.py --model=$NET/resnet18.onnx --input_blob=input_0 --output_blob=output_0 --labels=$DATASET/labels.txt $DATASET/test/Pneumonia/(selected image).jpeg testp1.jpg`
 
-Notice: The training processus at step 9 is very long especially if connected to a jetson nano.An alternative to optimize time would be:
+**Notice**: The training processus at step 9 is very long especially if connected to a jetson nano.An alternative to optimize time would be:
 
 1.Download pytorch machine learning library.
   Go to the follwoing webiste: https://pytorch.org/
