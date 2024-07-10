@@ -1,6 +1,6 @@
 # ProjectPneumonia
 
- This project aims to use Artificial Intelligence to identify a presence of pneumonia in an xray. This AI helps classify xray pictures into 2 categories : Normal,Pneumonia. THsi helps separate the cases of patients who may be infected with this disease.
+ This project aims to use Artificial Intelligence to identify a presence of pneumonia in an xray. This AI helps classify xray pictures into 2 categories : Normal,Pneumonia. This helps separate the cases of patients who may be infected with this disease.
 
 ![Identification of X-ray of Pneumonia infected patient]![6](https://github.com/yoyofuji/ProjectPneumonia/assets/174374607/4480a308-23f0-48e5-8cba-d5a41264a2ab)
 
@@ -27,16 +27,21 @@ Through this model, we can create our own running our own data, for this , multi
     '--epochs=NumberOfEpochs'
 
     
-The final line to train should be: 'python3 train.py --model-dir=models/(name_of_model) data/(name_of_file_with_data) --epochs=35 --batch-size=1 --workers=1'
+The final line to train should be:
+
+'python3 train.py --model-dir=models/(name_of_model) data/(name_of_file_with_data) --epochs=35 --batch-size=1 --workers=1'
 
 When training a model, different idications are given and shouldnt be neglected.
- Val loss:The margin of loss and error in the epoch ran
- Val time:time spent running an epoch
- Val accuracy:The overall accuracy of the epoch run
+ - Val loss:The margin of loss and error in the epoch ran
+ - Val time:time spent running an epoch
+ - Val accuracy:The overall accuracy of the epoch run
  
-###Observations
+### Observations
+
 ![image](https://github.com/yoyofuji/ProjectPneumonia/assets/174374607/dce6f0f1-d161-46a1-b3d7-ec2091c73b2e)
-As shown in the graph above accuracy improves over time however it does reach a limit point, often found in the 85-95%. However after a certain number of epochs a problem can occur called overfitting. Overfitting is the case where the AI model trains too many times to the point where it loses accuracy as it tends to focus on smaller insignificant and irrelevant details. 
+As shown in the graph above accuracy improves over time however it does reach a limit point, often found in the 85-95%. However after a certain number of epochs a problem can occur called overfitting. 
+
+Overfitting is the case where the AI model trains too many times to the point where it loses accuracy as it tends to focus on smaller insignificant and irrelevant details. 
 ![image](https://github.com/yoyofuji/ProjectPneumonia/assets/174374607/9cf3760d-9e56-45ca-a2a9-f2be6b0bf841)
 
 A simple relation exits between loss and epochs, the more epochs are run, the more the amount of loss diminishes.
