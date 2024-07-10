@@ -18,21 +18,21 @@ Through this model, we can create our own running our own data, for this , multi
 
   1)Batchsize, this is the specification that indicates how many images are we training at once, for example, we could train 10 images at once which wouldve give 1 batch.By default it is 10.
   
-    '--batch-size=NumberOfBatchFiles'
+    `--batch-size=NumberOfBatchFiles`
     
   2)Workers, workers is the specification of the number of threads that will simultaneously train the model, just like in real life 5 workers working on something often leads to increase speed. 
     However to run multiple workers a certain level of hardware and infrastructure is needed. By default it is 1.
     
-    '--workers=NumberOfWorkers'
+    `--workers=NumberOfWorkers`
     
   3)Epochs, is the the number of times the model wiil go through every image inputed. When running 10 epochs, an image will be analysed and looked at 10 times in the training process. By default it is 35.
   
-    '--epochs=NumberOfEpochs'
+    `--epochs=NumberOfEpochs`
 
     
 The final line to train should be:
 
-'python3 train.py --model-dir=models/(name_of_model) data/(name_of_file_with_data) --epochs=35 --batch-size=1 --workers=1'
+`python3 train.py --model-dir=models/(name_of_model) data/(name_of_file_with_data) --epochs=35 --batch-size=1 --workers=1`
 
 When training a model, different indications are given and should not be neglected:
  - **train loss**: The margin of loss and error in the epoch ran
@@ -51,7 +51,7 @@ Overfitting is the case where the AI model trains too many times to the point wh
 
 ![image](https://github.com/yoyofuji/ProjectPneumonia/assets/174374607/9cf3760d-9e56-45ca-a2a9-f2be6b0bf841)
 
-Underfitting also exits and in opposition to overfitting consist of not training a model enough meaning it will be inaccurate and inconsistent.
+>Underfitting also exits and in opposition to overfitting consist of not training a model enough meaning it will be inaccurate and inconsistent.
 
 A simple relation exits between loss and epochs, the more epochs are run, the more the amount of loss diminishes.
 
@@ -67,11 +67,12 @@ A simple relation exits between loss and epochs, the more epochs are run, the mo
 6. Import the ProjectPneumonia folder into VS code in this directory *jetson-inference/python/training/classification/data*
 7. Open a new terminal in jetson-inference directory and run the docker with the following command './docker/run.sh' this starts running the docker container to allow you to go trhough images and train the model
 8. In the docker naviguate to *jetson-inference/python/training/classification*
-9. Enter the following code to start training the model 'python3 train.py --model-dir=models/ProjectPneumonia data/ProjectPneumonia --epochs=70' This will run 70 epochs which shoul be enough to train the model
-10. Once done training, enter this command 'python3 onnx_export.py --model-dir=models/cat_dog' to run the onnx srcipt . Check in jetson-inference/python/training/classification/models/ProjectPneumonia a file resnet18.onnx should be present
+9. Enter the following code to start training the model `python3 train.py --model-dir=models/ProjectPneumonia data/ProjectPneumonia --epochs=70` This will run 70 epochs which shoul be enough to train the model
+10. Once done training, enter this command `python3 onnx_export.py --model-dir=models/cat_dog` to run the onnx srcipt . Check in jetson-inference/python/training/classification/models/ProjectPneumonia a file resnet18.onnx should be present
 11. Exit the docker with ctrl+D or *exit* command
-12. Enter both these commands to set the dataset and the network *'NET=models/cat_dog' 'DATASET=data/cat_dog'*
-13. Finally, run this command to obtain results in the selected choice 'imagenet.py --model=$NET/resnet18.onnx --input_blob=input_0 --output_blob=output_0 --labels=$DATASET/labels.txt $DATASET/test/Pneumonia/(selected image).jpeg testp1.jpg'
+12. Enter both these commands to set the dataset and the network `NET=models/cat_dog` & `DATASET=data/cat_dog`
+13. Finally, run this command to obtain results in the selected choice
+    `imagenet.py --model=$NET/resnet18.onnx --input_blob=input_0 --output_blob=output_0 --labels=$DATASET/labels.txt $DATASET/test/Pneumonia/(selected image).jpeg testp1.jpg`
 
 Notice: The training processus at step 9 is very long especially if connected to a jetson nano.An alternative to optimize time would be:
 
@@ -88,7 +89,7 @@ Notice: The training processus at step 9 is very long especially if connected to
 
 4. Export Trained models to the jetson nano
 
-**the efficiency comes from the fact that our computers possess more processors and infrastructure to run the epochs quicker**
+> the efficiency comes from the fact that our computers possess more processors and infrastructure to run the epochs quicker than the jetson nano
 
 ## Conclusion
 Here are examples of x ray scans tested.
