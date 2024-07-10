@@ -9,16 +9,25 @@
 
 For this project , to create and train a model , we used resnet18 which is a special type of network using 18 layers and employing CNN. 
 ![image](https://github.com/yoyofuji/ProjectPneumonia/assets/174374607/1bc243ca-7298-4caf-85f7-9e3a42a068cc)
-To train the model , we used an already existing model, imagenet which is the key databse to image classiffication.
+
+      To train the model , we used an already existing model, imagenet which is the key databse to image classiffication.
 Through this model, we can create our own running our own data, for this , multiple factors are to take into consideration:
-  1)Batchsize, this is the specification that indicates how many images are we training at once, for example, we could train 10 images at once which wouldve give 1 batch.By default it is 10 
+
+  1)Batchsize, this is the specification that indicates how many images are we training at once, for example, we could train 10 images at once which wouldve give 1 batch.By default it is 10
+  
     '--batch-size=NumberOfBatchFiles'
+    
   2)Workers, workers is the specification of the number of threads that will simultaneously train the model, just like in real life 5 workers working on something often leads to increase speed. 
     However to run multiple workers a certain level of hardware and infrastructure is needed. By default it is 1
+    
     '--workers=NumberOfWorkers'
+    
   3)Epochs, is the the number of times the model wiil go through every image inputed. When running 10 epochs, an image will be analysed and looked at 10 times in the training process. By default it is 35
+  
     '--epochs=NumberOfEpochs'
-Thw final line to train should be: 'python3 train.py --model-dir=models/(name_of_model) data/(name_of_file_with_data) --epochs=35 --batch-size=1 --workers=1'
+
+    
+The final line to train should be: 'python3 train.py --model-dir=models/(name_of_model) data/(name_of_file_with_data) --epochs=35 --batch-size=1 --workers=1'
 
 When training a model, different idications are given and shouldnt be neglected.
  Val loss:The margin of loss and error in the epoch ran
