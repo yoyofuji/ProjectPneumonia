@@ -2,7 +2,9 @@
 
  This project aims to use Artificial Intelligence to identify a presence of pneumonia in an xray. This AI helps classify xray pictures into 2 categories : Normal,Pneumonia. This helps separate the cases of patients who may be infected with this disease.
 
-Identification of X-ray of Pneumonia infected patient[6](https://github.com/yoyofuji/ProjectPneumonia/assets/174374607/4480a308-23f0-48e5-8cba-d5a41264a2ab)
+Identification of X-ray of Pneumonia infected patient
+
+[6](https://github.com/yoyofuji/ProjectPneumonia/assets/174374607/4480a308-23f0-48e5-8cba-d5a41264a2ab)
 
 
 ## The Algorithm
