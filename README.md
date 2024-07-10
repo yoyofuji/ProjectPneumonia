@@ -18,16 +18,16 @@ Through this model, we can create our own running our own data, for this , multi
 
   1)Batchsize, this is the specification that indicates how many images are we training at once, for example, we could train 10 images at once which wouldve give 1 batch.By default it is 10.
   
-    `--batch-size=NumberOfBatchFiles`
+    --batch-size=NumberOfBatchFiles
     
   2)Workers, workers is the specification of the number of threads that will simultaneously train the model, just like in real life 5 workers working on something often leads to increase speed. 
     However to run multiple workers a certain level of hardware and infrastructure is needed. By default it is 1.
     
-    `--workers=NumberOfWorkers`
+    --workers=NumberOfWorkers
     
   3)Epochs, is the the number of times the model wiil go through every image inputed. When running 10 epochs, an image will be analysed and looked at 10 times in the training process. By default it is 35.
   
-    `--epochs=NumberOfEpochs`
+    --epochs=NumberOfEpochs
 
     
 The final line to train should be:
