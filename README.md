@@ -74,12 +74,18 @@ A simple relation exits between loss and epochs, the more epochs are run, the mo
 13. Finally, run this command to obtain results in the selected choice 'imagenet.py --model=$NET/resnet18.onnx --input_blob=input_0 --output_blob=output_0 --labels=$DATASET/labels.txt $DATASET/test/Pneumonia/(selected image).jpeg testp1.jpg'
 
 Notice: The training processus at step 9 is very long especially if connected to a jetson nano.An alternative to optimize time would be:
+
 1.Download pytorch machine learning library.
   Go to the follwoing webiste: https://pytorch.org/
+  
   Selected your preferred download for your device
+  
   Open a terminal on VS code and follow the webiste steps
+  
 2.Download CUDA- Nvidia tool kit and follow steps
+
 3.Use VS code
+
 4. Export Trained models to the jetson nano
 
 **the efficiency comes from the fact that our computers possess more processors and infrastructure to run the epochs quicker**
