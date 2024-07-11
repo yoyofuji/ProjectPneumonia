@@ -18,16 +18,16 @@ Through this model, we can create our own running our own data, for this , multi
 
   1)Batchsize, this is the specification that indicates how many images are we training at once, for example, we could train 10 images at once which wouldve give 1 batch.By default it is 10.
   
-    --batch-size=NumberOfBatchFiles
+    > --batch-size=NumberOfBatchFiles
     
   2)Workers, workers is the specification of the number of threads that will simultaneously train the model, just like in real life 5 workers working on something often leads to increase speed. 
     However to run multiple workers a certain level of hardware and infrastructure is needed. By default it is 1.
     
-    --workers=NumberOfWorkers
+    > --workers=NumberOfWorkers
     
   3)Epochs, is the the number of times the model wiil go through every image inputed. When running 10 epochs, an image will be analysed and looked at 10 times in the training process. By default it is 35.
   
-    --epochs=NumberOfEpochs
+    > --epochs=NumberOfEpochs
 
     
 The final line to train should be:
@@ -63,13 +63,19 @@ A simple relation exits between loss and epochs, the more epochs are run, the mo
 2. Unzip the file and name it ProjectPneumonia
 3. sort the images into 3 sections: **train,test,val** , respect the following ratio of data **train:80% test:10% val:10%**
 4. Each file should have 50/50 split between normal and pneumonia both in 2 separate folders like this: **Project--> train-->Normal**
+
+   ![Screenshot (2)](https://github.com/yoyofuji/ProjectPneumonia/assets/174374607/64dd4044-e4d3-47bc-bf4b-c31fff15471f)
+
 5. Create the diffrent labels: Normal and pneumonia in a txt file in the ProjectPneumonia file
 6. Import the ProjectPneumonia folder into VS code in this directory *jetson-inference/python/training/classification/data*
 7. Open a new terminal in jetson-inference directory and run the docker with the following command './docker/run.sh' this starts running the docker container to allow you to go trhough images and train the model
 8. In the docker naviguate to *jetson-inference/python/training/classification*
 9. Enter the following code to start training the model `python3 train.py --model-dir=models/ProjectPneumonia data/ProjectPneumonia --epochs=70` This will run 70 epochs which shoul be enough to train the model
 10. Once done training, enter this command `python3 onnx_export.py --model-dir=models/cat_dog` to run the onnx srcipt . Check in jetson-inference/python/training/classification/models/ProjectPneumonia a file should be present
- > resnet18.onnx 
+    > resnet18.onnx
+
+![Screenshot (3)](https://github.com/yoyofuji/ProjectPneumonia/assets/174374607/9efc805e-6fed-466f-8ebc-8e7faffd2491)
+
 11. Exit the docker with ctrl+D or *exit* command
 12. Enter both these commands to set the dataset and the network `NET=models/cat_dog` & `DATASET=data/cat_dog`
 13. Finally, run this command to obtain results in the selected choice
