@@ -116,5 +116,6 @@ Accuracy 85% , very good accuracy and the correct answer
 
 
 
+## The following video should explain step by step how the Project functions:
 
-[View a video explanation here](video link)
+> https://youtu.be/pKvByohAafY
